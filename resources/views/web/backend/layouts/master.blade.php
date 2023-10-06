@@ -5,8 +5,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
 
-  <title>Admin Dashboard &mdash; {{ $settings['site_name'] }}</title>
-  <link rel="icon" href="{{ asset($settings['site_favicon']) }}" type="image/png">
+  <title>Estatelex Admin</title>
+  <link rel="icon" href="" type="image/png">
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -40,7 +40,7 @@
     <div class="main-wrapper main-wrapper-1">
 
         <!-- Includes the sidebar layout here-->
-        @include('admin.layouts.sidebar')
+        @include('web.backend.layouts.sidebar')
 
         <!-- Main Content -->
         <div class="main-content">
@@ -91,16 +91,6 @@
         @yield('index-tenant-records')
         @yield('create-tenant-records')
 
-        <!-- Roles and Permissions section-->
-        @yield('index-roles')
-        @yield('create-roles')
-        @yield('update-roles')
-
-        <!-- Role Users Management-->
-        @yield('index-role-users')
-        @yield('create-role-users')
-        @yield('update-role-users')
-
 
         </div>
         <footer class="main-footer">
@@ -146,7 +136,7 @@
     <!-- Filter search JS File -->
     <script src="{{ asset("admin/assets/js/filter.js") }}"></script>
 
-    @stack('scripts') // renders js code in a specific blade view file only
+    @stack('scripts')
 
     <!-- SweetAlert by realrashid-->
     <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>

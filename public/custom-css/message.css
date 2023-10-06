@@ -1,0 +1,21 @@
+#success_message
+{
+    padding: 5px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    margin: 0 auto;
+}
+
+#error_message
+{
+    padding: 5px;
+    background-color: #a72828;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+}

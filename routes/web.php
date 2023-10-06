@@ -2,13 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PasswordResetController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\PasswordResetController;
+use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RemittanceController;
 use App\Http\Controllers\Admin\SearchRemitController;
 use App\Http\Controllers\Admin\TenantRecordController;
+
+
+// HOME
+Route::get('/', [HomeController::class, '__invoke'])->name('home');
 
 
 // WEBPAGE AUTHENTICATION
@@ -30,9 +35,6 @@ Route::post('logout', [AdminPanelController::class, 'logout'])->name('logout');
 Route::put('profile-password-update/{id}', [ProfileController::class, 'passwordUpdate'])->name('profile-password.update');
 Route::resource('profile', ProfileController::class);
 
-// This route is for the admin Dashboard page Controller
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
 // This route is for the RemittanceController
 Route::resource('remit', RemittanceController::class);
 
@@ -44,5 +46,4 @@ Route::get('search-remit', [SearchRemitController::class, 'search'])->name('remi
 Route::get('statement', [TenantRecordController::class, 'index'])->name('statement.index');
 Route::get('statement/create', [TenantRecordController::class, 'create'])->name('statement.create');
 Route::get('statement/generate-pdf', [TenantRecordController::class, 'generatePDF'])->name('statement.generate-pdf');
-
 
