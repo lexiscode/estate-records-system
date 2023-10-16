@@ -14,12 +14,12 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = new User();
+        $user = new User();
 
-        $admin->name = 'Lexis';
-        $admin->email = 'admin@gmail.com';
-        $admin->password = '$2y$10$h1kyVkBCj.fsLloT9hSou.mWGEMKSpvfuc..1N5YoI0XlsgZ5HETe'; //unlockme123
+        $user->name = 'Lexis';
+        $user->email = 'admin@gmail.com';
+        $user->password = '$2y$10$Pilm5U8WjTYLRLZJVxLLG.ig3Wau7AruM5W.VjmBU.dfhojVjOh9O';
 
-        $admin->save();
+        $user->save();
     }
 }

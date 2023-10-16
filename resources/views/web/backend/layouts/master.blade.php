@@ -6,7 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}" />
 
   <title>Estatelex Admin</title>
-  <link rel="icon" href="" type="image/png">
+  <link rel="icon" href="" type="image/png"> <!--place site favicon in the href-->
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -51,35 +51,6 @@
         <!-- Admin Profile section -->
         @yield('index-profile')
 
-        <!-- Admin Settings section -->
-        @yield('index-admin-settings')
-
-        <!-- Properties section -->
-        @yield('index-properties')
-        @yield('create-properties')
-        @yield('show-property-details')
-        @yield('update-properties')
-        @yield('search-properties')
-
-        <!-- Blogs section -->
-        @yield('index-blogs')
-        @yield('create-blogs')
-        @yield('show-blog-details')
-        @yield('update-blogs')
-
-        <!-- Messages section -->
-        @yield('post_enquiries')
-
-        <!-- About Us section -->
-        @yield('about')
-
-        <!-- Agents section -->
-        @yield('index-agents')
-        @yield('create-agents')
-        @yield('show-agent-details')
-        @yield('update-agents')
-        @yield('search-agents')
-
         <!-- Remittance section -->
         @yield('index-remittances')
         @yield('create-remittances')
@@ -95,7 +66,7 @@
         </div>
         <footer class="main-footer">
             <div class="footer-left">
-            Copyright &copy; 2023 <div class="bullet"></div> Designed By <a href="https://nauval.in/">Nwokorie Alexander V.</a>
+            Copyright &copy; 2023 <div class="bullet"></div> Designed By <a href="#">Alexander V.</a>
             </div>
             <div class="footer-right">
 
@@ -157,9 +128,6 @@
             success_callback: null // Default: null
         });
 
-        // input tags fields in seo settings
-        $(".inputtags").tagsinput('items');
-
 
         /*This below handles the deleting functionality, alongside a <meta> in html header above*/
         // Add csrf token in ajax request
@@ -168,6 +136,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
         //Handle Dynamic delete
         $(document).ready(function() {
             $('.delete-item').on('click', function(e) {
@@ -207,7 +176,6 @@
                                 console.error(error);
                             }
                         });
-
 
                     }
                 })
