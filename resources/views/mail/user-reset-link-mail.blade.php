@@ -359,7 +359,9 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="{{ route('partner.reset-password', ['token'=>$token, 'email'=>$email]) }}" target="_blank">Reset Password</a> </td>
+                                        <td>
+                                        <a href="{{ route('reset-password', ['token'=>$token, 'email'=>$email]) }}" target="_blank">Reset Password</a>
+                                        </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -369,7 +371,7 @@
                         </table>
                         <p>If you did not request a password reset, no further action is required.</p>
                         <p>Regards,</p>
-                        <p> LexJoe Digital Solutions</p>
+                        <p>Estatelex.</p>
                       </td>
                     </tr>
                   </table>
@@ -385,7 +387,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">LexJoe Digial Solutions Inc., 8290 Walk Street, Australia</span>
+                    <span class="apple-link">Estatelex Inc., 8290 Walk Street, Nigeria</span>
 
                   </td>
                 </tr>

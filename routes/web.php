@@ -42,7 +42,7 @@ Route::resource('remit', RemittanceController::class);
 Route::get('search-remit', [SearchRemitController::class, 'search'])->name('remit.search');
 // This route is for the search functionality in the Properties admin page
 
-// Thess routes are for the TenantRecordController
+// These routes are for the TenantRecordController
 Route::get('statement', [TenantRecordController::class, 'index'])->name('statement.index');
 Route::get('statement/create', [TenantRecordController::class, 'create'])->name('statement.create');
 Route::get('statement/generate-pdf', [TenantRecordController::class, 'generatePDF'])->name('statement.generate-pdf');
