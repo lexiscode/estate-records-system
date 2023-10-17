@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('create-tenant-records')
     <section class="section">
@@ -15,7 +15,7 @@
 
                         <!-- This is the create new property button -->
                         <div class="card-header-action">
-                            <a href="{{ route('admin.statement.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('statement.index') }}" class="btn btn-primary">Back</a>
                         </div>
 
                     </div>

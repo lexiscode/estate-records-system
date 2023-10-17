@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('search-remittances')
     <section class="section">
@@ -19,7 +19,7 @@
 
                         <!-- This is the create new blog button -->
                         <div class="card-header-action">
-                            <a href="{{ route('admin.remit.create') }}" class="btn btn-primary">Add New Record</a>
+                            <a href="{{ route('remit.create') }}" class="btn btn-primary">Add New Record</a>
                         </div>
 
                     </div>
@@ -54,7 +54,7 @@
                                         Note: Ensure that there are no unnecessary space in-between the data name you are searching
                                         for, if still yes, then sorry your search request isn't in available in your database.
                                     </p>
-                                    <a href="{{ route('admin.remit.index') }}" class="btn btn-primary mt-4">Go Back</a>
+                                    <a href="{{ route('remit.index') }}" class="btn btn-primary mt-4">Go Back</a>
                                 </div>
                             </div>
                         @else
@@ -78,23 +78,17 @@
                                     <td>
                                         <div style="text-align: center;">
 
-                                            <a href="{{ route('admin.remit.show', $remit->id) }}" class="btn btn-primary"
+                                            <a href="{{ route('remit.show', $remit->id) }}" class="btn btn-primary"
                                                 id="exampleModal"><i class="fas fa-eye"></i></a>
 
-                                            <a href="{{ route('admin.remit.edit', $remit->id) }}"
+                                            <a href="{{ route('remit.edit', $remit->id) }}"
                                                 class="btn btn-primary btn-action mr-1" data-original-title="Edit">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <form method="POST" action="{{ route('admin.remit.destroy', $remit->id) }}"
-                                                style="display: inline;">
-                                                @csrf
-                                                @method('DELETE')
-
-                                                <button type='submit' class="btn btn-danger btn-action"><i
-                                                        class="fas fa-trash"></i></button>
-
-                                            </form>
+                                            <a href="{{ route('remit.destroy', $remit->id) }}" class="btn btn-danger delete-item">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
 
                                         </div>
                                     </td>

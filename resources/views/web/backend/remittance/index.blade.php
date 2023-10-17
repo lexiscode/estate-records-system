@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('index-remittances')
     <section class="section">
@@ -11,7 +11,7 @@
             <div class="card-header">
                 <h4>Manage All Tenants Dealings With You!</h4>
 
-                <form class="card-header-form" action="{{ route('admin.remit.search') }}" method="GET">
+                <form class="card-header-form" action="{{ route('remit.search') }}" method="GET">
                     <div class="input-group">
 
                         <input type="text" name="query" class="form-control" placeholder="Search ">
@@ -21,7 +21,7 @@
 
                         <!-- This is the create new blog button -->
                         <div class="card-header-action">
-                            <a href="{{ route('admin.remit.create') }}" class="btn btn-primary">Add New Record</a>
+                            <a href="{{ route('remit.create') }}" class="btn btn-primary">Add New Record</a>
                         </div>
 
                     </div>
@@ -102,15 +102,15 @@
                                 <td>
                                     <div style="text-align: center;">
 
-                                        <a href="{{ route('admin.remit.show', $remittance->id) }}"
+                                        <a href="{{ route('remit.show', $remittance->id) }}"
                                             class="btn btn-primary" id="exampleModal"><i class="fas fa-eye"></i></a>
 
-                                        <a href="{{ route('admin.remit.edit', $remittance->id) }}"
+                                        <a href="{{ route('remit.edit', $remittance->id) }}"
                                             class="btn btn-primary btn-action mr-1" data-original-title="Edit">
                                             <i class="far fa-edit"></i>
                                         </a>
 
-                                        <a href="{{ route('admin.remit.destroy', $remittance->id) }}" class="btn btn-danger delete-item">
+                                        <a href="{{ route('remit.destroy', $remittance->id) }}" class="btn btn-danger delete-item">
                                             <i class="fas fa-trash"></i>
                                         </a>
 

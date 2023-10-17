@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('show-remittances')
     <section class="section">
@@ -15,7 +15,7 @@
 
                         <!-- This is the save blog button -->
                         <div class="card-header-action">
-                            <a href="{{ route('admin.remit.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('remit.index') }}" class="btn btn-primary">Back</a>
                         </div>
 
                     </div>

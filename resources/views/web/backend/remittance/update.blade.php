@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('update-remittances')
     <section class="section">
@@ -14,7 +14,7 @@
                     <div class="input-group">
 
                         <div class="card-header-action">
-                            <a href="{{ route('admin.remit.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('remit.index') }}" class="btn btn-primary">Back</a>
                         </div>
 
                     </div>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="card-body">
-                <form method="POST" action="{{ route('admin.remit.update', $remittance->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('remit.update', $remittance->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -158,4 +158,20 @@
 
 @endsection
 
+{{--
+@push('scripts')
 
+    <script>
+        $(document).ready(function(){
+            var imageUrl = "{{ $remittance->payment_proof }}";
+            $('.image-preview').css({
+                "background-image": "url(" + imageUrl + ")",
+                "background-size": "cover",
+                "background-position": "center center"
+            });
+        });
+    </script>
+
+@endpush
+
+--}}

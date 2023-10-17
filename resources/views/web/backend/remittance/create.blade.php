@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('create-remittances')
     <section class="section">
@@ -14,7 +14,7 @@
                     <div class="input-group">
 
                         <div class="card-header-action">
-                            <a href="{{ route('admin.remit.index') }}" class="btn btn-primary">Back</a>
+                            <a href="{{ route('remit.index') }}" class="btn btn-primary">Back</a>
                         </div>
 
                     </div>
@@ -22,7 +22,7 @@
             </div>
 
             <div class="card-body">
-                <form method="POST" action="{{ route('admin.remit.store') }}" enctype="multipart/form-data" class="needs-validation" novalidate="">
+                <form method="POST" action="{{ route('remit.store') }}" enctype="multipart/form-data" class="needs-validation" novalidate="">
                     @csrf
 
                     <div class="form-row">

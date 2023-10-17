@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('web.backend.layouts.master')
 
 @section('index-profile')
     <!-- Main Content -->
@@ -6,7 +6,7 @@
         <div class="section-header">
             <h1>Profile</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
+                <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
                 <div class="breadcrumb-item">Profile</div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="row mt-sm-4">
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <form method="post" action="{{ route('admin.profile.update', $user->id) }}" class="needs-validation" novalidate="">
+                        <form method="post" action="{{ route('profile.update', $user->id) }}" class="needs-validation" novalidate="">
                             @csrf
                             @method('PUT')
                             <div class="card-header">
@@ -61,7 +61,7 @@
                 <!--Password Change-->
                 <div class="col-12 col-md-6">
                     <div class="card">
-                        <form method="post" action="{{ route('admin.profile-password.update', $user->id) }}" class="needs-validation" novalidate="">
+                        <form method="post" action="{{ route('profile-password.update', $user->id) }}" class="needs-validation" novalidate="">
                             @csrf
                             @method('PUT')
                             <div class="card-header">
