@@ -31,7 +31,6 @@
                             <span class="fables-iconemail fables-input-icon mt-2 font-13"></span>
                             <input type="email" name="email" class="form-control rounded-0 py-3 pl-5 font-13 sign-register-input"  placeholder="Email">
                         </div>
-
                     </div>
                     <div class="form-group">
                         <div class="input-icon">
