@@ -50,7 +50,7 @@
                             <div class="center-desk">
                                 <div class="logo">
                                     {{-- <a href="index.html"><img src="{{ asset('partners/adis-hotel/images/logo.png') }}" alt="#" /></a> --}}
-                                    <a href="index.html">ESTATELEX</a>
+                                    <a href="">ESTATELEX</a>
                                 </div>
                             </div>
                         </div>
