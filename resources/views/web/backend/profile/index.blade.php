@@ -19,6 +19,7 @@
             <div class="row mt-sm-4">
                 <div class="col-12 col-md-6">
                     <div class="card">
+                        
                         <form method="post" action="{{ route('profile.update', $user->id) }}" class="needs-validation" novalidate="">
                             @csrf
                             @method('PUT')
@@ -54,6 +55,7 @@
                                 <button type="submit" class="btn btn-primary">Save Changes</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
 

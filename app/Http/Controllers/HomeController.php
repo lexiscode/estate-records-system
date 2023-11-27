@@ -11,3 +11,4 @@ class HomeController extends Controller
         return view('web.frontend.home');
     }
 }
+

@@ -16,8 +16,11 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+
             return redirect()->route('dashboard')->with('success', 'Login is successful');
+
         }else{
+            
             return back()->with('error', 'Invalid credentials');
         }
     }
