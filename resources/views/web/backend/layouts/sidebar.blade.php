@@ -34,6 +34,13 @@
                 </ul>
             </li>
 
+            <li class="menu-header">All Tenant Info</li>
+            <li class="dropdown">
+                <li class="{{ setSidebarActive(['tenants.*']) }}">
+                <a href="{{ route('tenant.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Tenants</span></a>
+                </li>
+            </li>
+
         </ul>
     </aside>
 </div>

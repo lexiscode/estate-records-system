@@ -62,6 +62,13 @@
         @yield('index-tenant-records')
         @yield('create-tenant-records')
 
+        <!-- Tenants Information -->
+        @yield('index-tenants-info')
+        @yield('create-tenants-info')
+        @yield('show-tenants-info')
+        @yield('update-tenants-info')
+        @yield('search-tenants-info')
+
 
         </div>
         <footer class="main-footer">
@@ -105,7 +112,9 @@
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 
     <!-- Filter search JS File -->
-    <script src="{{ asset("admin/assets/js/filter.js") }}"></script>
+    <script src="{{ asset("admin/assets/js/filter-status.js") }}"></script>
+    <script src="{{ asset("admin/assets/js/filter-type.js") }}"></script>
+
 
     @stack('scripts')
 

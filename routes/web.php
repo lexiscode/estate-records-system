@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\RemittanceController;
 use App\Http\Controllers\Admin\SearchRemitController;
 use App\Http\Controllers\Admin\TenantRecordController;
+use App\Http\Controllers\Admin\TenantInfoController;
+use App\Http\Controllers\Admin\SearchTenantController;
 
 
 // HOME
@@ -40,10 +42,14 @@ Route::resource('remit', RemittanceController::class);
 
 // This route is for the search functionality in the Remittance admin page
 Route::get('search-remit', [SearchRemitController::class, 'search'])->name('remit.search');
-// This route is for the search functionality in the Properties admin page
 
 // These routes are for the TenantRecordController
 Route::get('statement', [TenantRecordController::class, 'index'])->name('statement.index');
 Route::get('statement/create', [TenantRecordController::class, 'create'])->name('statement.create');
 Route::get('statement/generate-pdf', [TenantRecordController::class, 'generatePDF'])->name('statement.generate-pdf');
 
+// This route is for the TenantInfoController
+Route::resource('tenant', TenantInfoController::class);
+
+// This route is for the search functionality in the TenantInfo admin page
+Route::get('search-tenant', [SearchTenantController::class, 'search'])->name('tenant.search');
