@@ -38,7 +38,6 @@
                                         <option>{{ $tenant }}</option>
                                     @endforeach
                                 </select>
-
                             </div>
 
                             <div class="form-group col-md-4">

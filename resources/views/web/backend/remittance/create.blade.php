@@ -28,7 +28,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputTenant">Name Of Tenant:</label>
-                            <input type="text" name="tenant_name" class="form-control" id="inputTenant" required>
+                            <select class="form-control select2" name="tenant_name" id="inputTenant" required>
+                                @foreach ($all_tenant as $tenant)
+                                    <option>{{ $tenant }}</option>
+                                @endforeach
+                            </select>
                             <div class="invalid-feedback">
                                 Please fill the name of tenant
                             </div>
@@ -38,7 +42,11 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="apartment">Apartment:</label>
-                            <input type="text" class="form-control" name="apartment" id="apartment" placeholder="Enter name or location of the apartment" required>
+                            <select class="form-control select2" name="apartment" id="apartment" required>
+                                @foreach ($all_tenants_apartment as $apartment)
+                                    <option>{{ $apartment }}</option>
+                                @endforeach
+                            </select>
                             <div class="invalid-feedback">
                                 Please fill in the name/location of apartment
                             </div>

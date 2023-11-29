@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Tenant;
+use App\Models\Remittance;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RemittanceStoreRequest;
 use App\Http\Requests\RemittanceUpdateRequest;
-use Illuminate\Http\Request;
-use App\Models\Remittance;
 
 class RemittanceController extends Controller
 {
@@ -25,7 +26,10 @@ class RemittanceController extends Controller
      */
     public function create()
     {
-        return view("web.backend.remittance.create");
+        $all_tenant = Tenant::distinct('tenant_name')->pluck('tenant_name');
+        $all_tenants_apartment = Tenant::distinct('apartment')->pluck('apartment');
+
+        return view("web.backend.remittance.create", compact('all_tenant', 'all_tenants_apartment'));
     }
 
     /**
