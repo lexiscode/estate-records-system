@@ -4,12 +4,12 @@
     <section class="section">
 
         <div class="section-header">
-            <h1>Manage All Remits</h1>
+            <h1>Manage All Service Charges</h1>
         </div>
 
         <div class="card card-warning">
             <div class="card-header">
-                <h4>Manage All Tenants Information Here!</h4>
+                <h4>Manage All Service Charge Records Here!</h4>
                 <form class="card-header-form">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control" placeholder="Search">
@@ -19,7 +19,7 @@
 
                         <!-- This is the create new blog button -->
                         <div class="card-header-action">
-                            <a href="{{ route('tenant.create') }}" class="btn btn-primary">Add New Record</a>
+                            <a href="{{ route('service-charge.create') }}" class="btn btn-primary">Add New Record</a>
                         </div>
 
                     </div>
@@ -34,7 +34,7 @@
                             <th>Tenant Names</th>
                             <th>Apartment</th>
                             <th>
-                                <div style="text-align: center;">Type</div>
+                                <div style="text-align: center;">Status</div>
                             </th>
                             <th scope="col">
                                 <div style="text-align: center;">Actions</div>
@@ -42,7 +42,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($remits_search->isEmpty())
+                        @if ($service_charge_search->isEmpty())
                             <div class="card-body">
                                 <div class="empty-state" data-height="400" style="height: 400px;">
                                     <div class="empty-state-icon">
@@ -53,29 +53,37 @@
                                         Note: Ensure that there are no unnecessary space in-between the data name you are searching
                                         for, if still yes, then sorry your search request isn't in available in your database.
                                     </p>
-                                    <a href="{{ route('remit.index') }}" class="btn btn-primary mt-4">Go Back</a>
+                                    <a href="{{ route('service-charge.index') }}" class="btn btn-primary mt-4">Go Back</a>
                                 </div>
                             </div>
                         @else
-                            @foreach ($tenants_search as $tenant)
+                            @foreach ($service_charge_search as $service)
                                 <tr>
 
-                                    <td><a>{{ $tenant->tenant_name }}</a></td>
-                                    <td class="font-weight-600">{{ $tenant->apartment }}</td>
-                                    <td>{{ $tenant->status }}</td>
+                                    <td><a>{{ $service->tenant_name }}</a></td>
+                                    <td class="font-weight-600">{{ $service->apartment }}</td>
+                                    <td>
+                                        @if ($service->status === 'Paid')
+                                        <div class="badge badge-success">{{ $service->status }}</div>
+                                        @elseif ($service->status === 'Partially Paid')
+                                            <div class="badge badge-info">{{ $service->status }}</div>
+                                        @elseif ($service->status === 'Overdue')
+                                            <div class="badge badge-warning">{{ $service->status }}</div>
+                                        @endif
+                                    </td>
 
                                     <td>
                                         <div style="text-align: center;">
 
-                                            <a href="{{ route('tenant.show', $tenant->id) }}" class="btn btn-primary"
+                                            <a href="{{ route('service-charge.show', $service->id) }}" class="btn btn-primary"
                                                 id="exampleModal"><i class="fas fa-eye"></i></a>
 
-                                            <a href="{{ route('tenant.edit', $tenant->id) }}"
+                                            <a href="{{ route('service-charge.edit', $service->id) }}"
                                                 class="btn btn-primary btn-action mr-1" data-original-title="Edit">
                                                 <i class="fas fa-pencil-alt"></i>
                                             </a>
 
-                                            <a href="{{ route('tenant.destroy', $tenant->id) }}" class="btn btn-danger delete-item">
+                                            <a href="{{ route('search-charge.destroy', $service->id) }}" class="btn btn-danger delete-item">
                                                 <i class="fas fa-trash"></i>
                                             </a>
 

@@ -9,7 +9,7 @@
 
         <div class="card card-warning">
             <div class="card-header">
-                <h4>Manage All Charges Records Here!</h4>
+                <h4>Manage All Service Charge Records Here!</h4>
 
                 <form class="card-header-form" action="{{ route('service-charge.search') }}" method="GET">
                     <div class="input-group">
@@ -80,27 +80,35 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($tenants->isEmpty())
-                            <p>No tenant data found.</p>
+                        @if ($service_charges->isEmpty())
+                            <p>No service charge data found.</p>
                         @else
-                            @foreach ($tenants as $tenant)
+                            @foreach ($service_charges as $service)
                             <tr>
 
-                                <td><a>{{ $tenant->tenant_name }}</a></td>
-                                <td class="font-weight-600">{{ $tenant->apartment }}</td>
-                                <td class="tenant-type">{{ $tenant->type }}</td>
+                                <td><a>{{ $service->tenant_name }}</a></td>
+                                <td class="font-weight-600">{{ $service->apartment }}</td>
+                                <td class="payment-status">
+                                    @if ($service->status === 'Paid')
+                                        <div class="badge badge-success">{{ $service->status }}</div>
+                                    @elseif ($service->status === 'Partially Paid')
+                                        <div class="badge badge-info">{{ $service->status }}</div>
+                                    @elseif ($service->status === 'Overdue')
+                                        <div class="badge badge-warning">{{ $service->status }}</div>
+                                    @endif
+                                </td>
                                 <td>
                                     <div style="text-align: center;">
 
-                                        <a href="{{ route('tenant.show', $tenant->id) }}"
+                                        <a href="{{ route('service-charge.show', $service->id) }}"
                                             class="btn btn-primary" id="exampleModal"><i class="fas fa-eye"></i></a>
 
-                                        <a href="{{ route('tenant.edit', $tenant->id) }}"
+                                        <a href="{{ route('service-charge.edit', $service->id) }}"
                                             class="btn btn-primary btn-action mr-1" data-original-title="Edit">
                                             <i class="far fa-edit"></i>
                                         </a>
 
-                                        <a href="{{ route('tenant.destroy', $tenant->id) }}" class="btn btn-danger delete-item">
+                                        <a href="{{ route('service-charge.destroy', $service->id) }}" class="btn btn-danger delete-item">
                                             <i class="fas fa-trash"></i>
                                         </a>
 
@@ -114,7 +122,7 @@
 
                 <!-- Simple pagination links -->
                 <div class="pagination" style="margin: 0 auto; justify-content: center; margin-top: 10px;">
-                    {{ $tenants->links('pagination::simple-bootstrap-4') }}
+                    {{ $service_charges->links('pagination::simple-bootstrap-4') }}
                 </div>
 
             </div>
