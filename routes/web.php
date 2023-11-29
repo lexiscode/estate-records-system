@@ -11,7 +11,9 @@ use App\Http\Controllers\Admin\RemittanceController;
 use App\Http\Controllers\Admin\SearchRemitController;
 use App\Http\Controllers\Admin\TenantRecordController;
 use App\Http\Controllers\Admin\TenantInfoController;
-use App\Http\Controllers\Admin\SearchTenantController;
+use App\Http\Controllers\Admin\ServiceChargeController;
+use App\Http\Controllers\Admin\SearchServiceChargeController;
+use App\Http\Controllers\Admin\SearchTenantInfoController;
 
 
 // HOME
@@ -50,6 +52,12 @@ Route::get('statement/generate-pdf', [TenantRecordController::class, 'generatePD
 
 // This route is for the TenantInfoController
 Route::resource('tenant', TenantInfoController::class);
-
 // This route is for the search functionality in the TenantInfo admin page
-Route::get('search-tenant', [SearchTenantController::class, 'search'])->name('tenant.search');
+Route::get('search-tenant', [SearchTenantInfoController::class, 'search'])->name('tenant.search');
+
+
+// This route is for the ServiceChargeController
+Route::resource('service-charge', ServiceChargeController::class);
+// This route is for the search functionality in the ServiceCharge admin page
+Route::get('search-service-charge', [SearchServiceChargeController::class, 'search'])->name('service-charge.search');
+

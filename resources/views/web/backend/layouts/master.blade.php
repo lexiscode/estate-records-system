@@ -36,6 +36,7 @@
 <!-- /END GA --></head>
 
 <body>
+
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
 
@@ -69,8 +70,15 @@
         @yield('update-tenants-info')
         @yield('search-tenants-info')
 
+        <!-- Service Charges Information -->
+        @yield('index-service-charge')
+        @yield('create-service-charge')
+        @yield('show-service-charge')
+        @yield('update-service-charge')
+        @yield('search-service-charge')
 
         </div>
+
         <footer class="main-footer">
             <div class="footer-left">
             Copyright &copy; 2023 <div class="bullet"></div> Designed By <a href="#">Alexander V.</a>

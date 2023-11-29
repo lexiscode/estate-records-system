@@ -41,6 +41,13 @@
                 </li>
             </li>
 
+            <li class="menu-header">Service Charge Records</li>
+            <li class="dropdown">
+                <li class="{{ setSidebarActive(['service-charge.*']) }}">
+                <a href="{{ route('service-charge.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Service Charge</span></a>
+                </li>
+            </li>
+
         </ul>
     </aside>
 </div>

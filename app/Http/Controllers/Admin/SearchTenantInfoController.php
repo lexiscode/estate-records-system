@@ -6,13 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tenant;
 
-class SearchTenantController extends Controller
+class SearchTenantInfoController extends Controller
 {
     public function search(Request $request)
     {
         $query = $request->input('query');
 
-        $remits_search = Tenant::where('tenant_name', 'like', "%$query%")
+        $tenants_search = Tenant::where('tenant_name', 'like', "%$query%")
             ->orWhere('apartment', 'like', "%$query%")
             ->get();
 
