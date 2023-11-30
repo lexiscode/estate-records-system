@@ -12,7 +12,7 @@ class ServiceCharge extends Model
     protected $fillable = [
         'tenant_name', 'apartment', 'status', 'generator_fee',
         'nepa_light_fee', 'sockaway_fee', 'borehole_fee', 'payment_date',
-        'debit_amount', 'debt_due_date', 'charge_due_date',
+        'debt_amount', 'debt_due_date', 'charge_due_date',
         'payment_method', 'payment_proof', 'notes'
     ];
 }
