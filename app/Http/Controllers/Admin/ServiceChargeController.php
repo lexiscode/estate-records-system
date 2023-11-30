@@ -41,6 +41,21 @@ class ServiceChargeController extends Controller
         // Validation rules for the form fields, handled by the request class
         $validatedData = $request->validated();
 
+        // Handle image upload
+        if ($request->hasFile('payment_proof')) {
+            $image = $request->file('payment_proof');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            // Move the uploaded image to the public directory
+            $image->move(public_path('uploads/service-charge'), $imageName);
+
+            // Generate the URL for the image
+            $imageUrl = url('uploads/service-charge/' . $imageName);
+
+            // Save the image name to the database
+            $validatedData['payment_proof'] = $imageUrl;
+        }
+
         // Create a new property using the validated data
         ServiceCharge::create($validatedData);
 
@@ -77,6 +92,22 @@ class ServiceChargeController extends Controller
 
         // Validation rules for the form fields
         $validatedData = $request->validated();
+
+        // Handle image upload if a new image is provided
+        if ($request->hasFile('payment_proof')) {
+
+            $image = $request->file('payment_proof');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+
+            // Move the uploaded image to the public directory
+            $image->move(public_path('uploads/service-charge'), $imageName);
+
+            // Generate the URL for the image
+            $imageUrl = url('uploads/service-charge/' . $imageName);
+
+            // Save the new image name to the database
+            $validatedData['payment_proof'] = $imageUrl;
+        }
 
         // Update the Remittance attributes
         $service_charge->update($validatedData);
