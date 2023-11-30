@@ -25,7 +25,7 @@
 
                 <h2 style="color: black;">{{ $tenant->tenant_name }}</h2>
                 <p style="color: black;">Apartment: {{ $tenant->apartment }}</p>
-                <p style="color: black;">Payment Status: {{ $tenant->type }}</p>
+                <p style="color: black;">Payment Type: {{ $tenant->type }}</p>
 
             </div>
         </div>
