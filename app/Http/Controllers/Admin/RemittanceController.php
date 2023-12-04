@@ -17,9 +17,11 @@ class RemittanceController extends Controller
     public function index()
     {
         $remittances = Remittance::orderBy('created_at', 'desc')->simplePaginate(5);
+        $all_tenants_apartment = Tenant::distinct('apartment')->pluck('apartment');
 
-        return view('web.backend.remittance.index', compact('remittances'));
+        return view('web.backend.remittance.index', compact('remittances', 'all_tenants_apartment'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -31,6 +33,7 @@ class RemittanceController extends Controller
 
         return view("web.backend.remittance.create", compact('all_tenant', 'all_tenants_apartment'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -61,6 +64,7 @@ class RemittanceController extends Controller
         return redirect()->route('remit.index')->with('creation-success', 'New record has been added successfully!');
     }
 
+
     /**
      * Display the specified resource.
      */
@@ -70,6 +74,7 @@ class RemittanceController extends Controller
 
         return view('web.backend.remittance.show', compact('remittance'));
     }
+    
 
     /**
      * Show the form for editing the specified resource.

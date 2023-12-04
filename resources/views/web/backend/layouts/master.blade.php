@@ -122,6 +122,7 @@
     <!-- Filter search JS File -->
     <script src="{{ asset("admin/assets/js/filter-status.js") }}"></script>
     <script src="{{ asset("admin/assets/js/filter-type.js") }}"></script>
+    <script src="{{ asset("admin/assets/js/filter-apartment.js") }}"></script>
 
 
     @stack('scripts')

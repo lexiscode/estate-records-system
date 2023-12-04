@@ -66,6 +66,17 @@
                     </select>
                 </div>
 
+                <div class="mb-3">
+                    <label for="apartmentFilter" class="form-label">Filter by Apartment:</label>
+                    <select class="form-control" id="apartmentFilter">
+                        @foreach ($all_tenants_apartment as $apartment)
+                            <option value="All">All</option>
+                            <option value="{{ $apartment }}">{{ $apartment }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -86,7 +97,7 @@
                             <tr>
 
                                 <td><a>{{ $remittance->tenant_name }}</a></td>
-                                <td class="font-weight-600">{{ $remittance->apartment }}</td>
+                                <td class="remit-apartment">{{ $remittance->apartment }}</td>
                                 <td class="payment-status">
                                     @if ($remittance->status === 'Paid')
                                         <div class="badge badge-success">{{ $remittance->status }}</div>
