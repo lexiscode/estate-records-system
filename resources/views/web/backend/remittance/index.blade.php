@@ -109,7 +109,7 @@
                                         <div class="badge badge-danger">{{ $remittance->status }}</div>
                                     @endif
                                 </td>
-                                <td>{{ $remittance->rent_due_date }}</td>
+                                <td>{{ \Carbon\Carbon::parse($remittance->rent_due_date)->format('d-m-Y') }}</td>
                                 <td>
                                     <div style="text-align: center;">
 
