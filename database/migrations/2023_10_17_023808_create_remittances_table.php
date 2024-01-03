@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('remittances', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tenant_id');
             $table->string('tenant_name');
             $table->string('apartment');
             $table->string('status');
@@ -26,6 +27,8 @@ return new class extends Migration
             $table->text('notes')->nullable(); // If notes are nullable
             $table->string('payment_proof')->nullable(); // If payment proof is nullable
             $table->timestamps();
+
+            $table->foreign('tenant_id')->references('id')->on('tenants');
         });
     }
 

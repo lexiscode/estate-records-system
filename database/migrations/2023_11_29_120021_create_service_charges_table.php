@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('service_charges', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('tenant_id');
             $table->string('tenant_name');
             $table->string('apartment');
             $table->string('status');
@@ -24,6 +25,8 @@ return new class extends Migration
             $table->string('payment_proof')->nullable();
             $table->text('notes');
             $table->timestamps();
+
+            $table->foreign('tenant_id')->references('id')->on('tenants');
         });
     }
 

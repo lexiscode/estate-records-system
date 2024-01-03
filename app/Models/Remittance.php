@@ -15,5 +15,10 @@ class Remittance extends Model
         'payment_method', 'notes', 'payment_proof'
     ];
 
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class);
+    }
+
 }
 
