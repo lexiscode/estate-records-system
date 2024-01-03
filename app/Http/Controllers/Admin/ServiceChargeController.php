@@ -79,7 +79,10 @@ class ServiceChargeController extends Controller
     {
         $service_charge = ServiceCharge::findOrFail($id);
 
-        return view('web.backend.service-charge.update', compact('service_charge'));
+        $all_tenant = Tenant::distinct('tenant_name')->get();
+        $all_tenants_apartment = Tenant::distinct('apartment')->get();
+
+        return view('web.backend.service-charge.update', compact('service_charge', 'all_tenants_apartment', 'all_tenant'));
     }
 
     /**
@@ -133,3 +136,4 @@ class ServiceChargeController extends Controller
         }
     }
 }
+

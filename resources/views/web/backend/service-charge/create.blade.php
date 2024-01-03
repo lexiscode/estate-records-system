@@ -67,49 +67,6 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
-                            <label for="generator_fee">Generator Fee:</label>
-                            <input type="number" name="generator_fee" class="form-control" id="generator_fee" required>
-                            <div class="invalid-feedback">
-                                Please fill in the generator fee
-                            </div>
-                            @error('generator_fee')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="nepa_fee">NEPA light fee:</label>
-                            <input type="number" name="nepa_light_fee" class="form-control" id="nepa_fee" required>
-                            <div class="invalid-feedback">
-                                Please fill in the NEPA light fee
-                            </div>
-                            @error('nepa_light_fee')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
-                            <label for="sockaway_fee">Sockaway fee:</label>
-                            <input type="number" name="sockaway_fee" class="form-control" id="sockaway_fee" required>
-                            <div class="invalid-feedback">
-                                Please fill in the sockaway fee
-                            </div>
-                            @error('sockaway_fee')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="borehole_fee">Borehole fee:</label>
-                            <input type="number" name="borehole_fee" class="form-control" id="borehole_fee" required>
-                            <div class="invalid-feedback">
-                                Please fill in the borehole fee
-                            </div>
-                            @error('borehole_fee')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-                        </div>
-                        <div class="form-group col-md-4">
                             <label for="payment_date">Date Of Payment:</label>
                             <input type="date" class="form-control" name="payment_date" id="payment_date" required>
                             <div class="invalid-feedback">
@@ -129,9 +86,6 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="debt_due_date">Debt Due-Date (Optional):</label>
                             <input type="date" name="debt_due_date" class="form-control" id="debt_due_date" required>
@@ -142,6 +96,9 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="charge_due_date">Charge Due-Date:</label>
                             <input type="date" name="charge_due_date" class="form-control" id="charge_due_date" required>
@@ -160,15 +117,15 @@
                                 <option>Check</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="payment_proof">Payment Proof (Optional):</label>
                             <input type="file" class="form-control" name="payment_proof" id="payment_proof">
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="notes">Extra Notes (Optional):</label>
+                            <label for="notes">List the Services:</label>
                             <textarea class="form-control" name="notes" id="notes" spellcheck="false" data-ms-editor="true"></textarea>
                         </div>
                     </div>
