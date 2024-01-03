@@ -4,16 +4,17 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\PasswordResetController;
-use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Admin\RemittanceController;
+use App\Http\Controllers\Admin\TenantInfoController;
 use App\Http\Controllers\Admin\SearchRemitController;
 use App\Http\Controllers\Admin\TenantRecordController;
-use App\Http\Controllers\Admin\TenantInfoController;
+use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Admin\ServiceChargeController;
-use App\Http\Controllers\Admin\SearchServiceChargeController;
 use App\Http\Controllers\Admin\SearchTenantInfoController;
+use App\Http\Controllers\Admin\SearchServiceChargeController;
+use App\Http\Controllers\Admin\SpecificTenantHistoryController;
 
 
 // HOME
@@ -61,3 +62,6 @@ Route::resource('service-charge', ServiceChargeController::class);
 // This route is for the search functionality in the ServiceCharge admin page
 Route::get('search-service-charge', [SearchServiceChargeController::class, 'search'])->name('service-charge.search');
 
+// This route is for the SpecificTenantHistoryController
+Route::get('tenant-history', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.index');
+Route::get('tenant-history/show', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.show');

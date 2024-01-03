@@ -48,6 +48,13 @@
                 </li>
             </li>
 
+            <li class="menu-header">Tenants History</li>
+            <li class="dropdown">
+                <li class="{{ setSidebarActive(['tenant-history.*']) }}">
+                <a href="{{ route('tenant-history.index') }}" class="nav-link"><i class="fas fa-fire"></i><span>Tenant History</span></a>
+                </li>
+            </li>
+
         </ul>
     </aside>
 </div>
