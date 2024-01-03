@@ -23,6 +23,7 @@ class ServiceChargeStoreRequest extends FormRequest
     {
         return [
             'tenant_name' => ['required', 'string', 'max:50'],
+            'tenant_id' => ['required', 'numeric'],
             'apartment' => ['required', 'string'],
             'status' => ['required', 'string'],
             'payment_date' => ['required', 'date'],

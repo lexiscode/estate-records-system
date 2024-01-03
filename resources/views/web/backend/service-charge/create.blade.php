@@ -41,6 +41,16 @@
                             @enderror
                         </div>
                         <div class="form-group col-md-4">
+                            <label for="inputTenantId">Tenant #ID Number:</label>
+                            <input type="number" class="form-control" name="tenant_id" id="inputTenantId">
+                            <div class="invalid-feedback">
+                                Please fill in the #id of tenant
+                            </div>
+                            @error('tenant_id')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="apartment">Apartment:</label>
                             <select class="form-control select2" name="apartment" id="apartment" required>
                                 @foreach ($all_tenants_apartment as $apartment)
@@ -54,6 +64,9 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="selectStatus">Payment Status:</label>
                             <select class="form-control form-control-sm" name="status" id='selectStatus' required>
@@ -63,9 +76,6 @@
                                 <option>Cancelled</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="payment_date">Date Of Payment:</label>
                             <input type="date" class="form-control" name="payment_date" id="payment_date" required>
@@ -86,6 +96,9 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="debt_due_date">Debt Due-Date (Optional):</label>
                             <input type="date" name="debt_due_date" class="form-control" id="debt_due_date" required>
@@ -96,9 +109,6 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="charge_due_date">Charge Due-Date:</label>
                             <input type="date" name="charge_due_date" class="form-control" id="charge_due_date" required>
@@ -117,13 +127,13 @@
                                 <option>Check</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="payment_proof">Payment Proof (Optional):</label>
                             <input type="file" class="form-control" name="payment_proof" id="payment_proof">
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="notes">List the Services:</label>
                             <textarea class="form-control" name="notes" id="notes" spellcheck="false" data-ms-editor="true"></textarea>
@@ -135,6 +145,7 @@
                     </div>
 
                 </form>
+
             </div>
 
         </div>

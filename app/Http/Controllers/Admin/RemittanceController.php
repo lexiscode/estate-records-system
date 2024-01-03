@@ -28,6 +28,8 @@ class RemittanceController extends Controller
      */
     public function create()
     {
+        //NB: "distinct()" ensures that the returned values are unique, i.e. if there are duplicate
+        //'tenant_name' and/or 'apartment' values, only one instance of each unique value will be included in the result.
         $all_tenant = Tenant::distinct('tenant_name')->pluck('tenant_name');
         $all_tenants_apartment = Tenant::distinct('apartment')->pluck('apartment');
 
@@ -74,7 +76,7 @@ class RemittanceController extends Controller
 
         return view('web.backend.remittance.show', compact('remittance'));
     }
-    
+
 
     /**
      * Show the form for editing the specified resource.

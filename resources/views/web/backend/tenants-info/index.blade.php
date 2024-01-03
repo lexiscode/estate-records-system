@@ -70,6 +70,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>#ID</th>
                             <th>Tenant Names</th>
                             <th>Apartment</th>
                             <th>
@@ -86,7 +87,7 @@
                         @else
                             @foreach ($tenants as $tenant)
                             <tr>
-
+                                <td><a>{{ $tenant->id }}</a></td>
                                 <td><a>{{ $tenant->tenant_name }}</a></td>
                                 <td class="font-weight-600">{{ $tenant->apartment }}</td>
                                 <td class="tenant-type">{{ $tenant->type }}</td>

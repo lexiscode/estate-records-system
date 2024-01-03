@@ -124,7 +124,6 @@
     <script src="{{ asset("admin/assets/js/filter-type.js") }}"></script>
     <script src="{{ asset("admin/assets/js/filter-apartment.js") }}"></script>
 
-
     @stack('scripts')
 
     <!-- SweetAlert by realrashid-->

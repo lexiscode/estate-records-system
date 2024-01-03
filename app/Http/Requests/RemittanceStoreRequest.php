@@ -15,6 +15,7 @@ class RemittanceStoreRequest extends FormRequest
     {
         return [
             'tenant_name' => ['required', 'string', 'max:50'],
+            'tenant_id' => ['required', 'numeric'],
             'apartment' => ['required', 'string'],
             'status' => ['required', 'string'],
             'rent_fee' => ['required', 'numeric'],
