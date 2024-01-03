@@ -66,7 +66,7 @@ Route::get('search-service-charge', [SearchServiceChargeController::class, 'sear
 
 // This route is for the SpecificTenantHistoryController
 Route::get('tenant-history', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.index');
-Route::get('tenant-history/show', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.show');
+Route::get('tenant-history/{id}', [SpecificTenantHistoryController::class, 'show'])->name('tenant-history.show');
 // This route is for the search functionality in the Tenant admin page
 Route::get('search-tenant-history', [SearchSpecificTenantHistoryController::class, 'search'])->name('tenant-history.search');
 
