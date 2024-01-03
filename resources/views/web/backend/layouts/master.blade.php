@@ -77,6 +77,11 @@
         @yield('update-service-charge')
         @yield('search-service-charge')
 
+        <!-- Specific Tenant History -->
+        @yield('index-tenant-history')
+        @yield('show-tenant-history')
+        @yield('search-tenant-history')
+
         </div>
 
         <footer class="main-footer">

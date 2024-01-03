@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ServiceChargeController;
 use App\Http\Controllers\Admin\SearchTenantInfoController;
 use App\Http\Controllers\Admin\SearchServiceChargeController;
 use App\Http\Controllers\Admin\SpecificTenantHistoryController;
+use App\Http\Controllers\Admin\SearchSpecificTenantHistoryController;
 
 
 // HOME
@@ -62,6 +63,10 @@ Route::resource('service-charge', ServiceChargeController::class);
 // This route is for the search functionality in the ServiceCharge admin page
 Route::get('search-service-charge', [SearchServiceChargeController::class, 'search'])->name('service-charge.search');
 
+
 // This route is for the SpecificTenantHistoryController
 Route::get('tenant-history', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.index');
 Route::get('tenant-history/show', [SpecificTenantHistoryController::class, 'index'])->name('tenant-history.show');
+// This route is for the search functionality in the Tenant admin page
+Route::get('search-tenant-history', [SearchSpecificTenantHistoryController::class, 'search'])->name('tenant-history.search');
+

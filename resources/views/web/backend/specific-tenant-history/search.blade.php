@@ -1,27 +1,21 @@
 @extends('web.backend.layouts.master')
 
-@section('search-tenants-info')
+@section('search-tenant-history')
     <section class="section">
 
         <div class="section-header">
-            <h1>Manage All Remits</h1>
+            <h1>View Tenants History</h1>
         </div>
 
         <div class="card card-warning">
             <div class="card-header">
-                <h4>Manage All Tenants Information Here!</h4>
+                <h4>Investigate All Tenants Activities Here!</h4>
                 <form class="card-header-form">
                     <div class="input-group">
                         <input type="text" name="search" class="form-control" placeholder="Search">
                         <div class="input-group-btn">
                             <button class="btn btn-primary btn-icon"><i class="fas fa-search"></i></button>
                         </div>
-
-                        <!-- This is the create new blog button -->
-                        <div class="card-header-action">
-                            <a href="{{ route('tenant.create') }}" class="btn btn-primary">Add New Record</a>
-                        </div>
-
                     </div>
 
                 </form>
@@ -31,6 +25,7 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            <th>#ID</th>
                             <th>Tenant Names</th>
                             <th>Apartment</th>
                             <th>
@@ -42,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($remits_search->isEmpty())
+                        @if ($tenants_history_search->isEmpty())
                             <div class="card-body">
                                 <div class="empty-state" data-height="400" style="height: 400px;">
                                     <div class="empty-state-icon">
@@ -53,30 +48,22 @@
                                         Note: Ensure that there are no unnecessary space in-between the data name you are searching
                                         for, if still yes, then sorry your search request isn't in available in your database.
                                     </p>
-                                    <a href="{{ route('remit.index') }}" class="btn btn-primary mt-4">Go Back</a>
+                                    <a href="{{ route('tenant-history.index') }}" class="btn btn-primary mt-4">Go Back</a>
                                 </div>
                             </div>
                         @else
-                            @foreach ($tenants_search as $tenant)
+                            @foreach ($tenants_history_search as $tenant)
                                 <tr>
-
+                                    <td><a>{{ $tenant->id }}</a></td>
                                     <td><a>{{ $tenant->tenant_name }}</a></td>
                                     <td class="font-weight-600">{{ $tenant->apartment }}</td>
-                                    <td>{{ $tenant->status }}</td>
+                                    <td>{{ $tenant->type }}</td>
 
                                     <td>
                                         <div style="text-align: center;">
 
-                                            <a href="{{ route('tenant.show', $tenant->id) }}" class="btn btn-primary"
-                                                id="exampleModal"><i class="fas fa-eye"></i></a>
-
-                                            <a href="{{ route('tenant.edit', $tenant->id) }}"
-                                                class="btn btn-primary btn-action mr-1" data-original-title="Edit">
-                                                <i class="fas fa-pencil-alt"></i>
-                                            </a>
-
-                                            <a href="{{ route('tenant.destroy', $tenant->id) }}" class="btn btn-danger delete-item">
-                                                <i class="fas fa-trash"></i>
+                                            <a href="{{ route('tenant-history.show', $tenant->id) }}" class="btn btn-primary"
+                                                id="exampleModal"><i class="fas fa-eye"></i>
                                             </a>
 
                                         </div>
@@ -93,5 +80,4 @@
     </section>
 
 @endsection
-
 

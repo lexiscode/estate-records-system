@@ -11,7 +11,7 @@ class Tenant extends Model
 
     protected $fillable = ['tenant_name', 'apartment','type'];
 
-    public function serviceCharge()
+    public function service_charge()
     {
         return $this->hasMany(ServiceCharge::class);
     }
