@@ -10,7 +10,7 @@ class ServiceCharge extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tenant_name', 'tenant_id', 'apartment', 'status',
+        'tenant_name', 'tenant_id', 'apartment', 'charge_fee', 'status',
         'payment_date','debt_amount', 'debt_due_date',
         'charge_due_date', 'payment_method', 'payment_proof', 'notes'
     ];

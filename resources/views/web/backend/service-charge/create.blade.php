@@ -68,6 +68,16 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
+                            <label for="inputChargeFee">Charge Fee:</label>
+                            <input type="number" class="form-control" name="charge_fee" id="inputChargeFee">
+                            <div class="invalid-feedback">
+                                Please fill in the charge fee
+                            </div>
+                            @error('charge_fee')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-4">
                             <label for="selectStatus">Payment Status:</label>
                             <select class="form-control form-control-sm" name="status" id='selectStatus' required>
                                 <option>Paid</option>
@@ -86,6 +96,9 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputDebtAmount">Debt Amount (Optional):</label>
                             <input type="number" class="form-control" name="debt_amount" id="inputDebtAmount">
@@ -96,9 +109,6 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="debt_due_date">Debt Due-Date (Optional):</label>
                             <input type="date" name="debt_due_date" class="form-control" id="debt_due_date" required>
@@ -119,6 +129,9 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
                         </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="payment_method">Payment Method:</label>
                             <select class="form-control form-control-sm" name="payment_method" id='payment_method' required>
@@ -127,14 +140,11 @@
                                 <option>Check</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="payment_proof">Payment Proof (Optional):</label>
                             <input type="file" class="form-control" name="payment_proof" id="payment_proof">
                         </div>
-                        <div class="form-group col-md-8">
+                        <div class="form-group col-md-4">
                             <label for="notes">List the Services:</label>
                             <textarea class="form-control" name="notes" id="notes" spellcheck="false" data-ms-editor="true"></textarea>
                         </div>

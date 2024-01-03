@@ -25,6 +25,7 @@ class ServiceChargeUpdateRequest extends FormRequest
             'tenant_name' => ['required', 'string', 'max:50'],
             'tenant_id' => ['required', 'numeric'],
             'apartment' => ['required', 'string'],
+            'charge_fee' => ['required', 'numeric'],
             'status' => ['required', 'string'],
             'payment_date' => ['required', 'date'],
             'debt_amount' => ['nullable', 'date'],

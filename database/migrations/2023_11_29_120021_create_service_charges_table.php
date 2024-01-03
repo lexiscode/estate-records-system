@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('tenant_id');
             $table->string('tenant_name');
             $table->string('apartment');
+            $table->string('charge_fee');
             $table->string('status');
             $table->date('payment_date');
             $table->unsignedBigInteger('debt_amount')->nullable();
