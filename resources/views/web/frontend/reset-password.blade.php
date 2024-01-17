@@ -37,8 +37,8 @@
                         <span class="fables-iconpassword fables-input-icon font-19 mt-1"></span>
                         <input type="password" name="password_confirmation" class="form-control rounded-0 py-3 pl-5 font-13 sign-register-input" placeholder="Repeat Password">
                         </div>
-
                     </div>
+                    
                     <button type="submit" class="btn btn-block rounded-0 white-color fables-main-hover-background-color fables-second-background-color font-16 semi-font py-3">Reset Password</button>
                 </form>
          </div>

@@ -33,7 +33,7 @@ class TenantStoreRequest extends FormRequest
         return [
             'required' => 'The :attribute field is required.',
             'max' => 'The :attribute field may not be greater than :max characters.',
-            'string' => 'The :attribute must be an string.',
+            'string' => 'The :attribute must be a string.',
         ];
     }
 }
