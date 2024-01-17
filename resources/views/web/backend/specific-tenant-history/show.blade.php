@@ -28,7 +28,7 @@
                 <p style="color: black;">Payment Type: {{ $tenant->type }}</p>
 
                 <h3>Remittance History:</h3>
-                @if ($tenant->remittance && $tenant->remittance->count() > 0)
+                @if ($tenant->remittance->count() > 0)
                     <ul>
                         @foreach ($tenant->remittance as $remittance)
                             <li>
@@ -50,7 +50,7 @@
                 @endif
 
                 <h3>Service Charge History:</h3>
-                @if ($tenant->service_charge && $tenant->service_charge->count() > 0)
+                @if ($tenant->service_charge->count() > 0)
                     <ul>
                         @foreach ($tenant->service_charge as $serviceCharge)
                             <li>
