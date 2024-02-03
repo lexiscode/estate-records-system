@@ -78,7 +78,6 @@
                 <table class="table">
                     <thead>
                         <tr style="text-align: center;">
-                            <th>#ID</th>
                             <th>Tenant Names</th>
                             <th>Apartment</th>
                             <th>Due Date</th>
@@ -91,11 +90,10 @@
                         @else
                             @foreach ($countdowns as $countdown)
                             <tr style="text-align: center;">
-                                <td><a>{{ $countdown->id }}</a></td>
                                 <td><a>{{ $countdown->tenant_name }}</a></td>
                                 <td class="font-weight-600">{{ $countdown->apartment }}</td>
                                 <td>{{ $countdown->rent_due_date }}</td>
-                                <td>
+                                <td style="color: red">
                                     @php
                                         $dueDate = Carbon\Carbon::parse($countdown->rent_due_date);
                                         $the_countdown = $now->diffInHours($dueDate);
@@ -133,7 +131,6 @@
                 <table class="table">
                     <thead>
                         <tr style="text-align: center;">
-                            <th>#ID</th>
                             <th>Tenant Names</th>
                             <th>Apartment</th>
                             <th>Due Date</th>
@@ -145,7 +142,6 @@
                         @else
                             @foreach ($overdues as $overdue)
                             <tr style="text-align: center;">
-                                <td><a>{{ $overdue->id }}</a></td>
                                 <td><a>{{ $overdue->tenant_name }}</a></td>
                                 <td class="font-weight-600">{{ $overdue->apartment }}</td>
                                 <td>{{ $overdue->rent_due_date }}</td>

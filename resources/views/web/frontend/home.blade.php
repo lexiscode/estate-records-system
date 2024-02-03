@@ -69,10 +69,12 @@
                     <div class="text-bg">
                         <div class="padding_lert">
                             <h1>ESTATELEX MANAGEMENT SYSTEM</h1>
-                            <span>LANDING PAGE 2023</span>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humour, or randomised words which don't
-                                look even slightly believable</p>
+                            <h2 style="color: white">PROPERLY ORGANIZE RECORDS</h2>
+                            <p>Our comprehensive web application is meticulously designed to streamline
+                                the complexities of managing your real estate portfolio effortlessly.
+                                Say goodbye to cumbersome paperwork and hello to a modern, user-friendly
+                                solution.
+                            </p>
                             <a href="{{ route('login.index') }}">Sign In</a>
                         </div>
                     </div>
