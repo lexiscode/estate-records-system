@@ -71,7 +71,7 @@
 
         <div class="card card-warning">
             <div class="card-header">
-                <h4>Duration of Rent Due to all Tenants!</h4>
+                <h4>Countdown Duration of Rent Due to all Tenants!</h4>
             </div>
 
             <div class="card-body">
@@ -100,9 +100,9 @@
 
                                         // If less than a day, display hours
                                         if ($the_countdown < 24) {
-                                            echo $the_countdown . ' hours';
+                                            echo $the_countdown . ' hours left';
                                         } else {
-                                            echo $now->diffInDays($dueDate) . ' days';
+                                            echo $now->diffInDays($dueDate) . ' days left';
                                         }
                                     @endphp
                                     {{-- {{ $countdown }} days left --}}

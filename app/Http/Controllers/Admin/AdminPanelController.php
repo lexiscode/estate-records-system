@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminPanelController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      */
@@ -29,7 +28,7 @@ class AdminPanelController extends Controller
 
         // countdown
         $now = Carbon::now();
-        $twoWeeksFromNow = $now->copy()->addWeeks(2);
+        $twoWeeksFromNow = $now->copy()->addWeeks(4);
 
         $countdowns = Remittance::whereBetween('rent_due_date', [$now, $twoWeeksFromNow])
             ->orderBy('rent_due_date')
