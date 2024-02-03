@@ -23,7 +23,7 @@ Route::get('/', [HomeController::class, '__invoke'])->name('home');
 
 
 // WEBPAGE AUTHENTICATION
-Route::get('login', [LoginController::class, 'index'])->name('login.index');
+// Route::get('login', [LoginController::class, 'index'])->name('login.index');
 Route::post('login', [LoginController::class, 'login'])->name('login');
 
 Route::get('forgot-password', [PasswordResetController::class, 'create'])->name('forgot-password');

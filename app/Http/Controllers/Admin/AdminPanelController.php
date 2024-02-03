@@ -52,7 +52,7 @@ class AdminPanelController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('login.index');
+        return redirect()->route('home');
     }
 }
 

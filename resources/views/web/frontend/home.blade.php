@@ -13,8 +13,8 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+
+
     <!-- style css -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Responsive-->
@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
         media="screen">
+
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -75,7 +79,49 @@
                                 Say goodbye to cumbersome paperwork and hello to a modern, user-friendly
                                 solution.
                             </p>
-                            <a href="{{ route('login.index') }}">Sign In</a>
+
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign In</a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+
+                                <form method="POST" action="{{ route('login') }}" autocomplete="off">
+                                    @csrf
+                                    <div class="modal-content" style="background-color: #f89646">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: white">Go To Admin Panel</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div>
+                                                @if (session()->has('error'))
+                                                <p class='text-sm text-red-600 space-y-1' style="text-align:center">
+                                                    {{ session()->get('error') }}
+                                                </p>
+                                                @endif
+                                            <p class="w-50 m-auto">
+                                                <label for="email" style="color: white">Email:</label>
+                                                <input class="form-control" type="text" name="email" id="email" placeholder="Enter Your Email" required>
+                                                <br>
+                                                <label for="password" style="color: white">Password:</label>
+                                                <input class="form-control" type="password" name="password" id="password" placeholder="Enter Your Password" required>
+                                                <br>
+
+                                                <a style="text-transform: lowercase; color: black;" href="/forgot-password" onmouseover="this.style.color='black'" onmouseout="this.style.color='black'"><i>Forgot password?</i></a>
+                                            </p>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-info" name="sign-in">Login</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -85,13 +131,11 @@
     <!-- end banner -->
 
 
-    <!-- end footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
     <!-- Javascript files-->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('js/jquery-3.0.0.min.js') }}"></script>
-    <script src="{{ asset('js/plugin.js') }}"></script>
+
     <!-- sidebar -->
     <script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>

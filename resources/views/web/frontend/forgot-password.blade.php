@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row my-4 my-lg-5">
          <div class="col-12 col-md-10 offset-md-1 col-lg-6 offset-lg-3 text-center">
-            <h1 class="m-0 text-primary text-uppercase">Estatelex</h1>
+            <h1 class="m-0 text-primary text-uppercase"><a href="/">Estatelex</a></h1>
             <p class="font-20 semi-font fables-main-text-color mt-4 mb-5">Forgot Password</p>
 
             <div class="mb-4 text-sm text-gray-600">
