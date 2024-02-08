@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('payment_proof')->nullable(); // If payment proof is nullable
             $table->timestamps();
 
-            $table->foreign('tenant_id')->references('id')->on('tenants');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade');
         });
     }
 

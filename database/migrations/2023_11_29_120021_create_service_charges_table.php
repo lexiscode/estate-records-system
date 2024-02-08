@@ -27,7 +27,7 @@ return new class extends Migration
             $table->text('notes');
             $table->timestamps();
 
-            $table->foreign('tenant_id')->references('id')->on('tenants');
+            $table->foreign('tenant_id')->references('id')->on('tenants')->onDelete('cascade');
         });
     }
 
