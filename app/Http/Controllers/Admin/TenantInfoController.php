@@ -10,6 +10,15 @@ use App\Http\Requests\TenantUpdateRequest;
 
 class TenantInfoController extends Controller
 {
+    // permissions management
+    public function __construct()
+    {
+        $this->middleware('role_or_permission:tenant index,web')->only('index');
+        $this->middleware('role_or_permission:tenant create,web')->only('create', 'store');
+        $this->middleware('role_or_permission:tenant update,web')->only('edit', 'update');
+        $this->middleware('role_or_permission:tenant delete,web')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      */

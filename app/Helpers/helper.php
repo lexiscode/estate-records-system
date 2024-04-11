@@ -10,3 +10,9 @@ function setSidebarActive(array $routes): ?string
     }
     return '';
 }
+
+/** check permission */
+function hasPermission(array $permissions)
+{
+    return auth()->user()->hasAnyPermission($permissions);
+}

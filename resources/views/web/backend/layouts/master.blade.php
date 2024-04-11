@@ -82,10 +82,15 @@
         @yield('show-tenant-history')
         @yield('search-tenant-history')
 
-        <!-- Specific Tenant History -->
+        <!-- User Roles -->
         @yield('index-role-users')
         @yield('create-role-users')
         @yield('edit-role-users')
+
+        <!-- Role Permissions -->
+        @yield('create-roles')
+        @yield('index-roles')
+        @yield('edit-roles')
 
         </div>
 

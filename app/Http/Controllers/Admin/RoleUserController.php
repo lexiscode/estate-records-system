@@ -15,15 +15,14 @@ use Spatie\Permission\Models\Role;
 
 class RoleUserController extends Controller
 {
-    /* permissions management
+    // permissions management
     public function __construct()
     {
-        $this->middleware('role_or_permission:access management index,admin')->only('index');
-        $this->middleware('role_or_permission:access management create,admin')->only('create', 'store');
-        $this->middleware('role_or_permission:access management edit,admin')->only('edit', 'update');
-        $this->middleware('role_or_permission:access management delete,admin')->only('destroy');
+        $this->middleware('role_or_permission:user-role index,web')->only('index');
+        $this->middleware('role_or_permission:user-role create,web')->only('create', 'store');
+        $this->middleware('role_or_permission:user-role edit,web')->only('edit', 'update');
+        $this->middleware('role_or_permission:user-role delete,web')->only('destroy');
     }
-    */
 
     /**
      * Display a listing of the resource.
@@ -112,14 +111,14 @@ class RoleUserController extends Controller
             $user->password = bcrypt($request->password);
         }
 
-        /* blocks other users from accessing Super Admin's update functionality via url
+        // blocks other users from accessing Super Admin's update functionality via url
         if($user->name === 'Super Admin'){
 
             toast('You are unauthorized!','success')->width('300');
 
             return redirect()->route('admin.role-user.index');
         }
-        */
+
 
         $user->save();
 
@@ -138,11 +137,11 @@ class RoleUserController extends Controller
         try{
 
             $user = User::findOrFail($id);
-            /*
+
             if ($user->getRoleNames()->first() === 'Super Admin'){
                 return response(['status' => 'error', 'message' => __('Can\'t Delete This One!')]);
             }
-            */
+            
 
             $user->delete();
             return response(['status' => 'success', 'message' => __('Deleted Successfully!')]);

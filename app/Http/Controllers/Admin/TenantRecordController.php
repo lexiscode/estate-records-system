@@ -10,6 +10,13 @@ use PDF;
 
 class TenantRecordController extends Controller
 {
+    // permissions management
+    public function __construct()
+    {
+        $this->middleware('role_or_permission:statement create,web')->only('create');
+        $this->middleware('role_or_permission:statement generatePDF,web')->only('generatePDF');
+    }
+
     /**
      * Display a listing of the resource.
     */

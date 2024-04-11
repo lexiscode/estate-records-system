@@ -11,6 +11,15 @@ use App\Http\Requests\RemittanceUpdateRequest;
 
 class RemittanceController extends Controller
 {
+    // permissions management
+    public function __construct()
+    {
+        $this->middleware('role_or_permission:remittance index,web')->only('index');
+        $this->middleware('role_or_permission:remittance create,web')->only('create', 'store');
+        $this->middleware('role_or_permission:remittance update,web')->only('edit', 'update');
+        $this->middleware('role_or_permission:remittance delete,web')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      */

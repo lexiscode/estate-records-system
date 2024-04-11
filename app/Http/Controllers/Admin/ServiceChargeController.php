@@ -11,6 +11,15 @@ use App\Http\Requests\ServiceChargeUpdateRequest;
 
 class ServiceChargeController extends Controller
 {
+    // permissions management
+    public function __construct()
+    {
+        $this->middleware('role_or_permission:service-charge index,web')->only('index');
+        $this->middleware('role_or_permission:service-charge create,web')->only('create', 'store');
+        $this->middleware('role_or_permission:service-charge update,web')->only('edit', 'update');
+        $this->middleware('role_or_permission:service-charge delete,web')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      */
