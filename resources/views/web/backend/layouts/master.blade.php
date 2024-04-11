@@ -82,6 +82,11 @@
         @yield('show-tenant-history')
         @yield('search-tenant-history')
 
+        <!-- Specific Tenant History -->
+        @yield('index-role-users')
+        @yield('create-role-users')
+        @yield('edit-role-users')
+
         </div>
 
         <footer class="main-footer">

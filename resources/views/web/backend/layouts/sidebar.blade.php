@@ -55,6 +55,19 @@
                 </li>
             </li>
 
+            <li class="menu-header">Roles & Permissions</li>
+            @php
+            $dropdownActiveClass = setSidebarActive(['role-user.*', 'role.*']);
+            @endphp
+            <li class="dropdown {{ $dropdownActiveClass ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-receipt"></i>
+                    <span>Roles & Permissions</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ setSidebarActive(['role-user.*']) }}"><a class="nav-link" href="{{ route('role-user.index') }}"><i class="fas fa-file-invoice-dollar"></i> <span>User Roles</span></a></li>
+                    <li class="{{ setSidebarActive(['role.*']) }}"><a class="nav-link" href="{{ route('role.index') }}"><i class="fas fa-file-invoice"></i> <span>Set Permissions</span></a></li>
+                </ul>
+            </li>
+
         </ul>
     </aside>
 </div>

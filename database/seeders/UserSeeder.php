@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         $user = new User();
 
-        $user->name = 'Lexis';
+        $user->name = 'Admin';
         $user->email = 'admin@gmail.com';
         $user->password = '$2y$10$Pilm5U8WjTYLRLZJVxLLG.ig3Wau7AruM5W.VjmBU.dfhojVjOh9O';
 

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\RoleUserController;
+use App\Http\Controllers\Admin\RolePermissionController;
 use App\Http\Controllers\Admin\AdminPanelController;
 use App\Http\Controllers\Admin\RemittanceController;
 use App\Http\Controllers\Admin\TenantInfoController;
@@ -70,3 +72,18 @@ Route::get('tenant-history/{id}', [SpecificTenantHistoryController::class, 'show
 // This route is for the search functionality in the Tenant admin page
 Route::get('search-tenant-history', [SearchSpecificTenantHistoryController::class, 'search'])->name('tenant-history.search');
 
+// Admin User Roles
+Route::resource('role-user', RoleUserController::class);
+
+// This route is for Roles and Permission Controller
+Route::get('role', [RolePermissionController::class, 'index'])->name('role.index');
+Route::get('role/create', [RolePermissionController::class, 'create'])->name('role.create');
+Route::post('role/store', [RolePermissionController::class, 'store'])->name('role.store');
+Route::get('role/{role}/edit', [RolePermissionController::class, 'edit'])->name('role.edit');
+Route::put('role/{role}', [RolePermissionController::class, 'update'])->name('role.update');
+Route::delete('role/{role}', [RolePermissionController::class, 'destroy'])->name('role.destroy');
+
+// Page Not Found
+Route::fallback(function(){
+    return view('404');
+});
