@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
-use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -77,11 +76,10 @@ class RolePermissionController extends Controller
         // Create a role dynamically for users authenticating with the admin guard:
         $role = Role::findOrFail($id);
 
-        /* blocks other users from accessing Super Admin's update functionality via url
+        // blocks other users from accessing Super Admin's update functionality via url
         if($role->name === 'Super Admin'){
             return redirect()->route('role.index')->with('update-error', 'You cannot edit access rights of the Super Admin!');
         }
-        */
 
         $role->update(['guard_name' => 'web', 'name' => $request->role]);
 

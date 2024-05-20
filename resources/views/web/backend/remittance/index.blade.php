@@ -121,9 +121,13 @@
                                             <i class="far fa-edit"></i>
                                         </a>
 
-                                        <a href="{{ route('remit.destroy', $remittance->id) }}" class="btn btn-danger delete-item">
+                                        <form action="{{ route('test.destroy', $test->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger delete-item">
                                             <i class="fas fa-trash"></i>
-                                        </a>
+                                        </button>
+                                        </form>
 
                                     </div>
                                 </td>
